@@ -7,7 +7,8 @@
 ```use payroll_service;```
 
 ## UC2 - Create a employee payroll table
-```CREATE TABLE employee_payroll
+```
+CREATE TABLE employee_payroll
     -> (
     ->   id                  INT unsigned NOT NULL AUTO_INCREMENT,
     ->   name                VARCHAR(150) NOT NULL,
