@@ -14,6 +14,7 @@
     ->   salary              Double NOT NULL,
     ->   start               DATE NOT NULL,
     ->   PRIMARY KEY         (id)
-    -> );```
+    -> );
+```
 ### To view table desciption
 ```DESCRIBE employee_payroll;```
