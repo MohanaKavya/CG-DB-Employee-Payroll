@@ -36,3 +36,13 @@ INSERT INTO employee_payroll(name , salary , start) VALUES
 ```SELECT salary FROM employee_payroll WHERE name='Charlie';```
 ### Checking employees who joined at particular date range
 ```SELECT * FROM employee_payroll WHERE start BETWEEN CAST('2019-01-01' AS DATE) AND DATE(NOW());```
+
+## UC6- Ability to add gender attribute to table
+### Adding gender
+```ALTER TABLE employee_payroll ADD gender CHAR(1) AFTER name;```
+### Setting F gender for female employees
+```update employee_payroll set gender = 'F' where name='Terisa' or name='Kavya';```
+### Setting M gender for male employees
+```update employee_payroll set gender='M' where name='Bill' or name='Charlie';```
+### Viewing gender
+```SELECT * FROM employee_payroll;```
