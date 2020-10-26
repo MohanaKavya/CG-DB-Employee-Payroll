@@ -32,7 +32,7 @@ INSERT INTO employee_payroll(name , salary , start) VALUES
 ```SELECT* FROM employee_payroll;```
 
 ## UC5 - Ability to retrieve salary data of employees by their name and who have joined in a particular data range
-###Viewing salary of particular person
+### Viewing salary of particular person
 ```SELECT salary FROM employee_payroll WHERE name='Charlie';```
-###Checking employees who joined at particular date range
+### Checking employees who joined at particular date range
 ```SELECT * FROM employee_payroll WHERE start BETWEEN CAST('2019-01-01' AS DATE) AND DATE(NOW());```
