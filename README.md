@@ -46,3 +46,15 @@ INSERT INTO employee_payroll(name , salary , start) VALUES
 ```update employee_payroll set gender='M' where name='Bill' or name='Charlie';```
 ### Viewing gender
 ```SELECT * FROM employee_payroll;```
+
+## UC7 - Ability to perform Sum, Average, Min, Max, Count Operations on Table Records
+### Total salary according to gender
+```SELECT gender, SUM(salary) as Total_Salary FROM employee_payroll GROUP BY gender;```
+### Average salary according to gender
+```SELECT gender, AVG(salary) as Average_Salary FROM employee_payroll GROUP BY gender;```
+### Minimum salary according to gender
+```SELECT gender, MIN(salary) as Minimum_Salary FROM employee_payroll GROUP BY gender;```
+### Maximum salary according to gender
+```SELECT gender, MAX(salary) as Maximum_Salary FROM employee_payroll GROUP BY gender;```
+### Count of employees according to gender
+```SELECT gender, COUNT(salary) as Number_of_Employees FROM employee_payroll GROUP BY gender;```
