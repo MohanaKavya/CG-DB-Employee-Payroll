@@ -88,3 +88,10 @@ ALTER TABLE employee_payroll ALTER address SET DEFAULT 'TBD';
 ```ALTER TABLE employee_payroll ADD tax Double NOT NULL AFTER taxable_pay;```
 ### Adding net_pay after tax
 ```ALTER TABLE employee_payroll ADD net_pay Double NOT NULL AFTER tax;```
+
+# UC10.1 - Ability to make MK as a part of Sales and Marketing Department
+```
+update employee_payroll set department='Sales' where name='MK';
+insert into employee_payroll (name, department, gender, basic_pay, deductions, taxable_pay, tax, net_pay, start)
+VALUES('MK', 'Marketing', 'M', 200000.00, 50000.00, 150000.00, 50000.00, 100000.00, '2018-01-03');
+``` 
