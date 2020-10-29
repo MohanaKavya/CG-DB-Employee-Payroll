@@ -147,3 +147,64 @@ create table employee_department(
 -> FOREIGN KEY (Department_ID) REFERENCES department (Department_ID)
 -> );
 ```
+
+## UC12 - Ensure all retrieve queries done
+### Deleting Department id foreign key reference in Employee table
+```ALTER TABLE employee DROP COLUMN department_id;```
+
+### Inserting into company table
+```
+INSERT INTO company VALUES
+    -> (1,'Capgemini'),
+    -> (2,'Mango'),
+    -> (3,'AB in Bev');
+```
+### Inserting into employee table
+```
+INSERT INTO employee VALUES
+    -> (101,1,'MK','8886771','Hyderabad','F','2020-09-16'),
+    -> (102,2,'Deeks','4567823','Bangalore','F','2020-06-02'),
+    -> (103,3,'Riks','4567828','Pune','M','2020-07-06');
+```
+### Inserting into payroll table
+```
+INSERT INTO payroll VALUES
+    -> (101,50000,5000,45000,5000,40000),
+    -> (102,20000,2000,18000,3000,15000),
+    -> (103,60000,6000,54000,4000,50000);
+```
+### Inserting into department table
+```
+INSERT INTO department VALUES
+    -> (21,'AI'),
+    -> (22,'CSE'),
+    -> (23,'Sales and Marketing');
+```
+### Inserting into employee_department table
+```
+INSERT INTO employee_department VALUES
+    -> (101,21),
+    -> (102,22),
+    -> (103,23),
+    -> (102,21);
+```
+### Total salary according to gender
+```
+select sum(p.net_pay),e.gender from employee e inner join payroll p on p.ID=e.ID group by e.gender;
+```
+### Average salary according to gender
+```
+select avg(p.net_pay),e.gender from employee e inner join payroll p on p.ID=e.ID group by e.gender;
+```
+### Minimum salary according to gender
+```
+select min(p.net_pay),e.gender from employee e inner join payroll p on p.ID=e.ID group by e.gender;
+```
+### Maximum salary according to gender
+```
+select max(p.net_pay),e.gender from employee e inner join payroll p on p.ID=e.ID group by e.gender;
+```
+### Count of employees according to gender
+```
+select count(p.net_pay),e.gender from employee e inner join payroll p on p.ID=e.ID group by e.gender;
+```
